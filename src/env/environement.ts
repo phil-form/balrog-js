@@ -1,3 +1,3 @@
 export const environement = {
-    api: 'http://localhost:3000/'
+    api: '#@#{BACK_IP}#@#'
 }
