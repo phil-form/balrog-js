@@ -26,9 +26,10 @@ pipeline {
                         scp ./deployment-front.tar $SSH_SERVER:$DEPLOY_PATH/
                         ssh $SSH_SERVER "
                             cd $DEPLOY_PATH
-                            docker load -i ./deployment-front.tar
                             docker compose stop front || true
                             docker compose rm front || true
+                            docker image rm deployment-front || true
+                            docker load -i ./deployment-front.tar
                             docker compose up front -d
                         "
                     '''
