@@ -1,0 +1,1 @@
+sed -E -i "s|(api:[[:space:]]*')([a-zA-Z0-9#@{}:/_]*)(')|\1http:\/\/api.deployment.local.test.be\/\3|g" ./src/env/environement.ts
