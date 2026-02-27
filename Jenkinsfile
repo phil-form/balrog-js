@@ -28,7 +28,7 @@ pipeline {
                             cd $DEPLOY_PATH
                             docker compose stop front || true
                             docker compose rm front || true
-                            docker image rm deployment-front || true
+                            docker image rm deployment-front
                             docker load -i ./deployment-front.tar
                             docker compose up front -d
                         "
